@@ -1,4 +1,4 @@
-# Wiremock UI
+# Mountebank UI
 
 ## Local Setup
 
