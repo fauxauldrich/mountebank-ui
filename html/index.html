@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mountebank UI</title>
+    <link rel="stylesheet" href="css/spectre.min.css" />
+    <link rel="stylesheet" href="css/spectre-exp.min.css" />
+    <link rel="stylesheet" href="css/spectre-icons.min.css" />
+    <script src="js/jsoneditor.min.js"></script>
+    <script src="js/ace.js"></script>
+    <style>
+      .btn-link {
+        color: white !important;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar bg-dark" style="height: 7vh !important">
+      <section class="navbar-section">
+        <a href="imposters.html" class="btn btn-link">Imposters</a>
+        <a href="logs.html" class="btn btn-link">Logs</a>
+      </section>
+      <section class="navbar-center">
+        <a href="index.html" class="btn btn-link"><h4>Mountebank UI</h4></a>
+      </section>
+      <section class="navbar-section">
+        <a href="#" id="createImposter" class="btn btn-link">Create Imposter</a>
+      </section>
+    </header>
+    <div style="min-height: 93vh; max-height: 93vh; overflow: scroll">
+      <div id="editor"></div>
+    </div>
+    <script src="main-bundle.js"></script>
+  </body>
+</html>
