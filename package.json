@@ -6,8 +6,8 @@
   "scripts": {
     "tsc": "tsc",
     "tscw": "tsc --watch",
-    "wp": "webpack",
-    "wpw": "webpack --watch",
+    "build": "webpack",
+    "dev": "webpack --watch",
     "start": "npm run wpw & serve build/"
   },
   "keywords": [],
