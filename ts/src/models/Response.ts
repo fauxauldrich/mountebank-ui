@@ -5,7 +5,22 @@ export interface IsResponse {
   repeat?: number;
   behaviors?: Array<WaitBehavior | DecorateBehavior | ShellTransformBehavior | CopyBehavior | LookUpBehavior>;
 }
-export interface ProxyResponse {}
+export interface ProxyResponse {
+  proxy: ProxyResponseDefinition;
+}
+interface ProxyResponseDefinition {
+  to: string;
+  mode?: string;
+  key?: string;
+  cert?: string;
+  ciphers?: string;
+  secureProtocol?: string;
+  passphrase?: string;
+  addWaitBehavior?: "true" | "false";
+  addDecorateBehavior?: string;
+  predicateGenerators: Array<Record<string, any>>;
+  injectHeaders: Record<string, any>;
+}
 export interface InjectResponse {
   inject: string;
 }
