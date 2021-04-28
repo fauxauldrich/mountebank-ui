@@ -12,7 +12,7 @@
 - Run application in development mode using `npm start`
 - Navigate to `http://localhost:5000/`
 - To deploy in production
-  - Build using webpack: `npm run wp`
+  - Build using webpack: `npm run build`
   - `npm install -g serve`
   - `serve build/`
 
