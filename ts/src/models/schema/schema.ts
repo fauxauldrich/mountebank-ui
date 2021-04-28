@@ -19,6 +19,9 @@ export const ImposterSchema = {
           type: "string",
           enum: ["true", "false"],
         },
+        numberOfRequests: {
+          type: "number",
+        },
         key: {
           type: "string",
         },
@@ -220,6 +223,16 @@ export const ImposterSchema = {
     CopyBehavior: {
       type: "object",
       properties: {
+        copy: {
+          $ref: "#/definitions/CopyBehaviorDefinition",
+        },
+      },
+      required: ["copy"],
+      additionalProperties: false,
+    },
+    CopyBehaviorDefinition: {
+      type: "object",
+      properties: {
         from: {
           type: "string",
         },
@@ -261,6 +274,16 @@ export const ImposterSchema = {
       additionalProperties: false,
     },
     LookUpBehavior: {
+      type: "object",
+      properties: {
+        lookup: {
+          $ref: "#/definitions/LookUpBehaviorDefinition",
+        },
+      },
+      required: ["lookup"],
+      additionalProperties: false,
+    },
+    LookUpBehaviorDefinition: {
       type: "object",
       properties: {
         key: {
@@ -345,6 +368,56 @@ export const ImposterSchema = {
     },
     ProxyResponse: {
       type: "object",
+      properties: {
+        proxy: {
+          $ref: "#/definitions/ProxyResponseDefinition",
+        },
+      },
+      required: ["proxy"],
+      additionalProperties: false,
+    },
+    ProxyResponseDefinition: {
+      type: "object",
+      properties: {
+        to: {
+          type: "string",
+        },
+        mode: {
+          type: "string",
+        },
+        key: {
+          type: "string",
+        },
+        cert: {
+          type: "string",
+        },
+        ciphers: {
+          type: "string",
+        },
+        secureProtocol: {
+          type: "string",
+        },
+        passphrase: {
+          type: "string",
+        },
+        addWaitBehavior: {
+          type: "string",
+          enum: ["true", "false"],
+        },
+        addDecorateBehavior: {
+          type: "string",
+        },
+        predicateGenerators: {
+          type: "array",
+          items: {
+            type: "object",
+          },
+        },
+        injectHeaders: {
+          type: "object",
+        },
+      },
+      required: ["to", "predicateGenerators", "injectHeaders"],
       additionalProperties: false,
     },
     InjectResponse: {
@@ -353,8 +426,6 @@ export const ImposterSchema = {
         inject: {
           type: "string",
           format: "javascript",
-          default:
-            'function (config){\n\tvar random_number = parseInt(Math.random() * 1000000000);\n\treturn {\n\t\theader: {"content-type": "application/json"},\n\t\tbody: {"phone_number": random_number}\n\t};\n}',
           options: {
             ace: {
               theme: "ace/theme/monokai",
