@@ -8,11 +8,17 @@ export interface ShellTransformBehavior {
   shellTransform: string;
 }
 export interface CopyBehavior {
+  copy: CopyBehaviorDefinition;
+}
+export interface CopyBehaviorDefinition {
   from: string;
   into: string;
   using: Using;
 }
 export interface LookUpBehavior {
+  lookup: LookUpBehaviorDefinition;
+}
+export interface LookUpBehaviorDefinition {
   key: Key;
   fromDataSource: FromDataSource;
   into: string;
