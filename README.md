@@ -16,8 +16,6 @@
   - `npm install -g serve`
   - `serve build/`
 
-## TODO
-- Include proxy response in schema
 
 ## Screenshots
 <img width="1792" alt="1" src="https://user-images.githubusercontent.com/10685907/111806656-36f19100-88f8-11eb-89f9-f51510d5c21f.png">
