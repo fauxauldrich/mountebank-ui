@@ -8,7 +8,7 @@
     "tscw": "tsc --watch",
     "build": "webpack",
     "dev": "webpack --watch",
-    "start": "npm run wpw & serve build/"
+    "start": "npm run dev & serve build/"
   },
   "keywords": [],
   "author": "",
